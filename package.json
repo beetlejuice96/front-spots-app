@@ -16,11 +16,15 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "@supabase/supabase-js": "^2.49.4",
     "@tanstack/react-router": "^1.114.3",
     "@tanstack/react-router-devtools": "^1.114.3",
     "framer-motion": "^10.18.0",
+    "leaflet": "^1.9.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-leaflet": "^5.0.0",
+    "zustand": "^5.0.4"
   },
   "devDependencies": {
     "@tanstack/eslint-config": "^0.1.0",
