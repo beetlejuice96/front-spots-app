@@ -3,6 +3,8 @@ import { useSpotStore } from './store/useSpotStore'
 import { Box, Flex, Heading, Text } from '@chakra-ui/react'
 import MapView from '@/views/MapView/MapView'
 import Navigation from '@/components/Navigation'
+import ListView from './views/ListView/ListView'
+import DetailView from './views/DetailView/DetailView'
 
 function App() {
   const {
@@ -80,8 +82,8 @@ function App() {
 
         <Box h="full">
           {viewMode === 'map' && <MapView />}
-          {viewMode === 'list' && <div>ListView</div>}
-          {viewMode === 'detail' && <div>DetailView</div>}
+          {viewMode === 'list' && <ListView />}
+          {viewMode === 'detail' && <DetailView />}
         </Box>
       </Box>
       <Navigation />
