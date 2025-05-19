@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import { useSpotStore } from './store/useSpotStore'
 import { Box, Flex, Heading, Text } from '@chakra-ui/react'
-import MapView from './views/MapView/MapView'
+import MapView from '@/views/MapView/MapView'
+import Navigation from '@/components/Navigation'
 
 function App() {
   const {
@@ -83,6 +84,7 @@ function App() {
           {viewMode === 'detail' && <div>DetailView</div>}
         </Box>
       </Box>
+      <Navigation />
     </Flex>
   )
 }
