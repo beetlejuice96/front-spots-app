@@ -16,9 +16,9 @@ import { ChakraProvider } from '@chakra-ui/react'
 import theme from './theme/index.ts'
 
 const Fonts = () => (
-  <style jsx global>{`
-    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;600;800&display=swap');
-  `}</style>
+  <style>
+    {`@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;600;800&display=swap');`}
+  </style>
 )
 
 const rootRoute = createRootRoute({

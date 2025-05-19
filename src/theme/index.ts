@@ -1,4 +1,4 @@
-import { extendTheme, type StyleFunctionProps } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
 
 // Definimos los colores de nuestra aplicación
 const colors = {
@@ -17,7 +17,7 @@ const colors = {
 
 // Definimos los estilos globales
 const styles = {
-  global: (props: StyleFunctionProps) => ({
+  global: () => ({
     body: {
       bg: 'brand.background',
       color: 'brand.text',

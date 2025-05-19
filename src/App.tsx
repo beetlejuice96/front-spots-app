@@ -5,6 +5,7 @@ import MapView from '@/views/MapView/MapView'
 import Navigation from '@/components/Navigation'
 import ListView from './views/ListView/ListView'
 import DetailView from './views/DetailView/DetailView'
+import FilterPanel from './components/FilterPanel'
 
 function App() {
   const {
@@ -85,6 +86,7 @@ function App() {
           {viewMode === 'list' && <ListView />}
           {viewMode === 'detail' && <DetailView />}
         </Box>
+        {viewMode !== 'detail' && <FilterPanel />}
       </Box>
       <Navigation />
     </Flex>
