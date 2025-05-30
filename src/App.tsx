@@ -37,7 +37,7 @@ function App() {
         borderColor="brand.border"
       >
         <Heading as="h1" size="lg" color="white" letterSpacing="tight">
-          SKATE SPOT FINDER
+          SPOT HUNT
         </Heading>
       </Box>
       <Box as="main" flex="1" overflow="hidden" position="relative" p={2}>

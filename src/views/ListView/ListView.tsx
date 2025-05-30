@@ -15,7 +15,7 @@ const ListView = () => {
   return (
     <Box p={4} overflow="auto" h="full">
       <Heading as="h2" size="xl" mb={6} fontFamily="mono">
-        SKATE SPOTS
+        SPOTS
       </Heading>
 
       {filteredSpots.length === 0 ? (

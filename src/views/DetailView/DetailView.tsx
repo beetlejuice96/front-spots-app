@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { useSpotStore } from '@/store/useSpotStore'
 import { supabase } from '@/lib/supabase'
+import MiniMap from '@/components/MiniMap'
 
 const DetailView = () => {
   const { selectedSpot, setViewMode } = useSpotStore()
@@ -30,15 +31,15 @@ const DetailView = () => {
         : []
 
       // Load primary photo
-      if (primaryPhoto) {
-        const { data: primaryData } = supabase.storage
-          .from('photos')
-          .getPublicUrl(primaryPhoto.storage_path)
-
-        if (primaryData) {
-          setPrimaryPhotoUrl(primaryData.publicUrl)
-        }
-      }
+      // if (primaryPhoto) {
+      //   const { data: primaryData } = supabase.storage
+      //     .from('photos')
+      //     .getPublicUrl(primaryPhoto.storage_path)
+      //   if (primaryData) {
+      //     setPrimaryPhotoUrl(primaryData.publicUrl)
+      //   }
+      // }
+      if (primaryPhoto) setPrimaryPhotoUrl(primaryPhoto.storage_path)
 
       // Load other photos
       const urls = await Promise.all(
@@ -337,6 +338,18 @@ const DetailView = () => {
           <Heading as="h2" size="md" fontFamily="mono" mb="3">
             LOCATION
           </Heading>
+          <Button
+            bg="brand.primary"
+            mb={3}
+            w={'full'}
+            fontFamily="mono"
+            onClick={() => {
+              const url = `https://www.google.com/maps/search/?api=1&query=${selectedSpot.latitude},${selectedSpot.longitude}`
+              window.open(url, '_blank')
+            }}
+          >
+            Navigate to spot
+          </Button>
           <Box
             bg="white"
             p="4"
@@ -363,9 +376,10 @@ const DetailView = () => {
             >
               {/* Mini map would go here */}
               <Flex h="full" alignItems="center" justifyContent="center">
-                <Text fontFamily="mono" fontWeight="bold">
-                  {selectedSpot.latitude}, {selectedSpot.longitude}
-                </Text>
+                <MiniMap
+                  latitude={selectedSpot.latitude}
+                  longitude={selectedSpot.longitude}
+                />
               </Flex>
             </Box>
           </Box>
