@@ -20,10 +20,9 @@
     "@tanstack/react-router": "^1.114.3",
     "@tanstack/react-router-devtools": "^1.114.3",
     "framer-motion": "^10.18.0",
-    "leaflet": "^1.9.4",
+    "mapbox-gl": "^3.12.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-leaflet": "^5.0.0",
     "zustand": "^5.0.4"
   },
   "devDependencies": {
@@ -31,7 +30,7 @@
     "@tanstack/router-plugin": "^1.120.12",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.2.0",
-    "@types/leaflet": "^1.9.17",
+    "@types/mapbox-gl": "^3.4.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
