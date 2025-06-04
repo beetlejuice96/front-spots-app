@@ -46,7 +46,7 @@ const MiniMap: React.FC<MiniMapProps> = ({ latitude, longitude }) => {
 
     map.current.setCenter([longitude, latitude])
     map.current.setZoom(15)
-  }, [mapLoaded])
+  }, [mapLoaded, latitude, longitude])
 
   return (
     <>

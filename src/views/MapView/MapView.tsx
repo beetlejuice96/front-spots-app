@@ -134,12 +134,21 @@ const MapView = () => {
     markers.current = []
   }
 
+  // Helper function to sanitize strings
+  const sanitizeHTML = (str: string): string => {
+    const div = document.createElement('div')
+    div.textContent = str
+    return div.innerHTML
+  }
+
   // Crear HTML del popup manteniendo el estilo original
   const createPopupHTML = (spot: Spot): string => {
     return `
       <div class="custom-popup-content">
-        <h3 class="custom-popup-title">${spot.name}</h3>
-        <p class="custom-popup-description">${spot.description}</p>
+        <h3 class="custom-popup-title">${sanitizeHTML(spot.name)}</h3>
+        <p class="custom-popup-description">${sanitizeHTML(
+          spot.description || 'No description available',
+        )}</p>
         <button 
           class="custom-popup-button" 
           onclick="window.handleSpotClick('${spot.id}')"
@@ -173,16 +182,6 @@ const MapView = () => {
         closeOnClick: false,
         maxWidth: '300px',
       }).setHTML(createPopupHTML(spot))
-
-      // Crear marcador personalizado si quieres mantener el estilo de Leaflet
-      const markerElement = document.createElement('div')
-      markerElement.style.width = '25px'
-      markerElement.style.height = '41px'
-      markerElement.style.backgroundImage =
-        "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230EA5E9' stroke='white' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='10' r='8'/%3E%3Cpath d='M12 18L18 24H6L12 18Z'/%3E%3C/svg%3E\")"
-      markerElement.style.backgroundSize = 'contain'
-      markerElement.style.backgroundRepeat = 'no-repeat'
-      markerElement.style.cursor = 'pointer'
 
       const marker = new mapboxgl.Marker({
         color: '#FF6B6B',
